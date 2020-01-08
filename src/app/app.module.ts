@@ -20,7 +20,6 @@ import { NavigationComponent } from './core/components/navigation/navigation.com
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     MaterialModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
