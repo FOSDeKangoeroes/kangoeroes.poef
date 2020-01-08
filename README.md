@@ -1,6 +1,12 @@
 # kangoeroes.poef
 
-Progressive Web App voor 'consumer' gebruik van de digitale poef. Gebouwd met Angular. 
+Progressive Web App voor 'consumer' gebruik van de digitale poef. Gebouwd met Angular.
+
+## Info
+
+- Angular 8
+- Angular Material
+- PWA support
 
 ## Prerequisites
 
