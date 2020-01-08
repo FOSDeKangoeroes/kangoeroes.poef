@@ -4,7 +4,7 @@ Progressive Web App voor 'consumer' gebruik van de digitale poef. Gebouwd met An
 
 ## Prerequisites
 
-**Zorg dat je voor elk commando steeds in de root map van het project bent met je terminal.
+**Zorg dat je voor elk commando steeds in de root map van het project bent met je terminal.**
 
 - Angular CLI
 - http-server: `npm install -g http-server`
