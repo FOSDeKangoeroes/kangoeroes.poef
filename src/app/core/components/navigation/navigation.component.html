@@ -11,11 +11,11 @@
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
     <span>kangoeroes-poef</span>
+    <span class="fill-remaining-space"></span>
     <app-theme-switcher></app-theme-switcher>
   </mat-toolbar>
   <mat-sidenav-container
     class="sidenav-container"
-    [style.marginTop.px]="(isHandset$ | async) ? 56 : 0"
   >
     <mat-sidenav
       #drawer
