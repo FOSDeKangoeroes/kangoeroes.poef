@@ -1,28 +1,40 @@
-
-<mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>kangoeroes-poef</span>
-    </mat-toolbar><mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+<div class="container" [class.is-mobile]="isHandset$ | async">
+  <mat-toolbar color="primary">
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+      *ngIf="isHandset$ | async"
+      
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span>kangoeroes-poef</span>
+  </mat-toolbar>
+  <mat-sidenav-container
+    class="sidenav-container"
+    [style.marginTop.px]="(isHandset$ | async) ? 56 : 0"
+  >
+    <mat-sidenav
+      #drawer
+      class="sidenav"
+      [fixedInViewport]="isHandset$ | async"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-   <!-- <mat-toolbar>Menu</mat-toolbar>-->
-    <mat-nav-list>
-      <a mat-list-item href="#">Link Een</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-    <!-- Add Content Here -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      fixedTopGap="56"
+      [opened]="(isHandset$ | async) === false"
+    >
+      <!--<mat-toolbar>Menu</mat-toolbar>-->
+      <mat-nav-list>
+        <a mat-list-item href="#">Link Een</a>
+        <a mat-list-item href="#">Link 2</a>
+        <a mat-list-item href="#">Link 3</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+      <!-- Add Content Here -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
