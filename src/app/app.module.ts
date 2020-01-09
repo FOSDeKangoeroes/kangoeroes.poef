@@ -9,13 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './core/material/material.module';
 import { NavigationComponent } from './core/components/navigation/navigation.component';
 import { MaterialCssVarsModule } from 'angular-material-css-vars';
-import { ThemeSwitcherComponent } from './core/components/theme-switcher/theme-switcher.component';
+import { ThemeSwitcherModule } from './core/components/theme-switcher/theme-switcher.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    ThemeSwitcherComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +26,8 @@ import { ThemeSwitcherComponent } from './core/components/theme-switcher/theme-s
       isAutoContrast: true,
       darkThemeClass: 'isDarkTheme',
       lightThemeClass: 'isLightTheme'
-    })
+    }),
+    ThemeSwitcherModule
   ],
   providers: [],
   bootstrap: [AppComponent]

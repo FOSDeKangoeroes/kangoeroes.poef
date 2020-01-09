@@ -1,18 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { MaterialCssVarsService } from 'angular-material-css-vars';
+import { ThemeSwitcherService } from './core/components/theme-switcher/theme-switcher.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
   title = 'kangoeroes-poef';
+  private switcherSubscription: Subscription;
 
-  constructor(public materialCssVarsService: MaterialCssVarsService) {
+  constructor(
+    public materialCssVarsService: MaterialCssVarsService,
+    private switcherService: ThemeSwitcherService
+  ) {
     const primary = '#1a214f';
-    //this.materialCssVarsService.setDarkTheme(false);
     this.materialCssVarsService.setPrimaryColor(primary);
     this.materialCssVarsService.setAccentColor('white');
+    this.switcherService.initTheme();
+    this.switcherSubscription = this.switcherService.isDarkTheme$.subscribe(
+      res => {
+        this.materialCssVarsService.setDarkTheme(res);
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+   this.switcherSubscription.unsubscribe();
   }
 }
