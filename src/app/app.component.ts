@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'kangoeroes-poef';
 
   constructor(public materialCssVarsService: MaterialCssVarsService) {
-    const primary = "#1a214f";
+    const primary = '#1a214f';
     this.materialCssVarsService.setDarkTheme(false);
     this.materialCssVarsService.setPrimaryColor(primary);
     this.materialCssVarsService.setAccentColor(primary);
