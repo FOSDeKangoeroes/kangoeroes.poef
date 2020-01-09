@@ -11,8 +11,8 @@ export class AppComponent {
 
   constructor(public materialCssVarsService: MaterialCssVarsService) {
     const primary = '#1a214f';
-    this.materialCssVarsService.setDarkTheme(false);
+    //this.materialCssVarsService.setDarkTheme(false);
     this.materialCssVarsService.setPrimaryColor(primary);
-    this.materialCssVarsService.setAccentColor(primary);
+    this.materialCssVarsService.setAccentColor('white');
   }
 }

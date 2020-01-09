@@ -9,11 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './core/material/material.module';
 import { NavigationComponent } from './core/components/navigation/navigation.component';
 import { MaterialCssVarsModule } from 'angular-material-css-vars';
+import { ThemeSwitcherComponent } from './core/components/theme-switcher/theme-switcher.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    ThemeSwitcherComponent
   ],
   imports: [
     BrowserModule,
