@@ -1,3 +1,5 @@
+@import '~angular-material-css-vars/public-util';
+
 body {
   box-sizing: border-box;
 }
@@ -41,3 +43,7 @@ body {
 .content-container {
   padding: 16px;
 }
+
+.active {
+  background: lightgrey;
+} 
