@@ -10,11 +10,13 @@ import { MaterialModule } from './core/material/material.module';
 import { NavigationComponent } from './core/components/navigation/navigation.component';
 import { MaterialCssVarsModule } from 'angular-material-css-vars';
 import { ThemeSwitcherModule } from './core/components/theme-switcher/theme-switcher.module';
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
