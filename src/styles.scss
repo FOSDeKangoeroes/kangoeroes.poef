@@ -39,3 +39,13 @@ q {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+
+  @import '~angular-material-css-vars/main';
+
+// optional
+$mat-css-dark-theme-selector: '.isDarkTheme';
+$mat-css-light-theme-selector: '.isLightTheme';
+
+// init theme
+@include initMaterialCssVars();

@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './core/material/material.module';
 import { NavigationComponent } from './core/components/navigation/navigation.component';
+import { MaterialCssVarsModule } from 'angular-material-css-vars';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,11 @@ import { NavigationComponent } from './core/components/navigation/navigation.com
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     MaterialModule,
+    MaterialCssVarsModule.forRoot({
+      isAutoContrast: true,
+      darkThemeClass: 'isDarkTheme',
+      lightThemeClass: 'isLightTheme'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
