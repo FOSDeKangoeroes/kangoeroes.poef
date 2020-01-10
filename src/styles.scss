@@ -7,3 +7,7 @@ $mat-css-light-theme-selector: '.isLightTheme';
 
 // init theme
 @include initMaterialCssVars();
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}

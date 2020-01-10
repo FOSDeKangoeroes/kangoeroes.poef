@@ -22,23 +22,7 @@
       <mat-sidenav-content>
         <mat-toolbar class="mat-elevation-z2">Bevers - Cola</mat-toolbar>
         <div class="card-container">
-          <mat-card class="poef-card">
-            <mat-card-header
-              ><span class="fill-remaining-space"></span>
-              <button mat-icon-button>
-                <mat-icon>more_vert</mat-icon>
-              </button>
-
-              <img mat-card-avatar src="/assets/icons/icon-72x72.png" />
-              <mat-card-title>Thomas de Wulf</mat-card-title>
-              <mat-card-subtitle>10 streepjes</mat-card-subtitle>
-            </mat-card-header>
-
-            <mat-card-actions align="end">
-              <button mat-button>MIN</button>
-              <button mat-button>PLUS</button>
-            </mat-card-actions>
-          </mat-card>
+          <app-poef-card leaderName="Thomas" amountOfDrinks="0"></app-poef-card>
         </div>
       </mat-sidenav-content>
     </mat-sidenav-container>

@@ -1,0 +1,17 @@
+<mat-card class="poef-card">
+            <mat-card-header
+              ><span class="fill-remaining-space"></span>
+              <button mat-icon-button>
+                <mat-icon>more_vert</mat-icon>
+              </button>
+
+              <img mat-card-avatar src="/assets/icons/icon-72x72.png" />
+            <mat-card-title>{{leaderName}}</mat-card-title>
+            <mat-card-subtitle>{{amountOfDrinks | i18nPlural: amountPluralMapping }}</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-actions align="end">
+              <button mat-button>MIN</button>
+              <button mat-button>PLUS</button>
+            </mat-card-actions>
+          </mat-card>
