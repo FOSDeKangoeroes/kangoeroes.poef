@@ -23,7 +23,7 @@
       [fixedInViewport]="isHandset$ | async"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      fixedTopGap="64"
+      [fixedTopGap]="(isHandset$ | async) ? '56': '64'"
       [opened]="(isHandset$ | async) === false"
     >
       <!--<mat-toolbar>Menu</mat-toolbar>-->
