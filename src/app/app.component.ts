@@ -16,9 +16,10 @@ export class AppComponent implements OnDestroy {
     public materialCssVarsService: MaterialCssVarsService,
     private switcherService: ThemeSwitcherService
   ) {
-    const primary = '#1a214f';
+    const primary = '#253480';
+    const secondary = '#b3ddff';
     this.materialCssVarsService.setPrimaryColor(primary);
-    this.materialCssVarsService.setAccentColor('white');
+    this.materialCssVarsService.setAccentColor(secondary);
     this.switcherService.initTheme();
     this.switcherSubscription = this.switcherService.isDarkTheme$.subscribe(
       res => {

@@ -1,27 +1,46 @@
 <mat-sidenav-container class="takNav">
-  <mat-sidenav  mode="side" opened>
-      <mat-toolbar color="secondary">Takken</mat-toolbar>
+  <mat-sidenav class="mat-elevation-z4" mode="side" opened>
+    <mat-toolbar>Takken</mat-toolbar>
     <mat-list>
       <mat-list-item>Bevers</mat-list-item>
       <mat-divider></mat-divider>
-        <mat-list-item>Welpen</mat-list-item>
+      <mat-list-item>Welpen</mat-list-item>
       <mat-divider></mat-divider
     ></mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
-      <mat-sidenav-container class="drinkNav" >
-        <mat-sidenav mode="side" opened>
-            <mat-toolbar color='secondary'>Dranken</mat-toolbar>
-            <mat-list>
-      <mat-list-item>Cola</mat-list-item>
-      <mat-divider></mat-divider>
-        <mat-list-item>Fanta</mat-list-item>
-      <mat-divider></mat-divider
-    ></mat-list>
-        </mat-sidenav>
-        <mat-sidenav-content>
-            
-        </mat-sidenav-content>
-      </mat-sidenav-container>
+    <mat-sidenav-container class="drinkNav">
+      <mat-sidenav class="mat-elevation-z2" mode="side" opened>
+        <mat-toolbar>Dranken</mat-toolbar>
+        <mat-list>
+          <mat-list-item>Cola</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Fanta</mat-list-item>
+          <mat-divider></mat-divider
+        ></mat-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <mat-toolbar>Bevers - Cola</mat-toolbar>
+        <div class="card-container">
+          <mat-card class="poef-card">
+            <mat-card-header
+              ><span class="fill-remaining-space"></span>
+              <button mat-icon-button>
+                <mat-icon>more_vert</mat-icon>
+              </button>
+
+              <img mat-card-avatar src="/assets/icons/icon-72x72.png" />
+              <mat-card-title>Thomas de Wulf</mat-card-title>
+              <mat-card-subtitle>10 streepjes</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-actions align="end">
+              <button mat-button>MIN</button>
+              <button mat-button>PLUS</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </mat-sidenav-content>
 </mat-sidenav-container>
