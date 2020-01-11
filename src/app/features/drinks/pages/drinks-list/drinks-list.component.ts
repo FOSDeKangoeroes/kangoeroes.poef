@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MatSidenav } from '@angular/material/sidenav';
 
+
 @Component({
   selector: 'app-drinks-list',
   templateUrl: './drinks-list.component.html',
@@ -51,10 +52,8 @@ export class DrinksListComponent implements OnInit, AfterViewInit {
     });
   }
 
-  onTakClick(event) {
+  onTakClick() {
     this.closeSideNav(this.takDrawer);
-
-    console.log(event);
   }
 
   onDrinkClick() {
