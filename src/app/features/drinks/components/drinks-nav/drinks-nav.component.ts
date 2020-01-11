@@ -17,7 +17,7 @@ export class DrinksNavComponent implements OnInit, AfterViewInit {
   @ViewChild('drawer', {static: false}) drawer: MatSidenav;
 
   isLockedOpen = true;
- 
+
   constructor(public deviceService: DeviceDetectionService) { }
 
   ngOnInit() {
@@ -33,14 +33,14 @@ export class DrinksNavComponent implements OnInit, AfterViewInit {
 
   onItemClick() {
 
-    if(!this.isLockedOpen) {
+    if (!this.isLockedOpen) {
       this.drawer.close();
     }
 
   }
 
   back() {
-    if(!this.topDrawer) {
+    if (!this.topDrawer) {
       throw new Error('No topDrawer input was provided to go back to.');
     }
 

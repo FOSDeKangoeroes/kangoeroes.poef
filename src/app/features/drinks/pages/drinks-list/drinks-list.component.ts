@@ -20,7 +20,6 @@ import { DrinksNavComponent } from '../../components/drinks-nav/drinks-nav.compo
   styleUrls: ['./drinks-list.component.scss']
 })
 export class DrinksListComponent implements OnInit {
- 
 
   @ViewChild('takDrawer', { static: false }) takDrawer: DrinksNavComponent;
 
