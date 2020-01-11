@@ -1,4 +1,25 @@
+@import '~angular-material-css-vars/public-util';
+
 .mat-card-avatar {
     width: 50px;
     height: 50px;
+}
+
+.poef-card {
+    user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mat-card .last-child {
+  margin-bottom: 0;
+}
+
+.poef-card:active {
+     box-shadow: 0 3px 0 mat-css-color-primary(500);
+  top: 3px;
 }
