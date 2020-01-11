@@ -11,3 +11,9 @@ $mat-css-light-theme-selector: '.isLightTheme';
 .fill-remaining-space {
   flex: 1 1 auto;
 }
+
+.is-mobile .toolbar {
+  
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 3;
+}
