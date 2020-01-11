@@ -7,6 +7,7 @@ import { MaterialModule } from 'src/app/core/material/material.module';
 import { PoefCardComponent } from './components/poef-card/poef-card.component';
 import { FlexLayoutModule, GridModule } from '@angular/flex-layout';
 import { DrinksNavComponent } from './components/drinks-nav/drinks-nav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -17,7 +18,8 @@ import { DrinksNavComponent } from './components/drinks-nav/drinks-nav.component
     DrinksRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    GridModule
+    GridModule,
+    HttpClientModule
   ]
 })
 export class DrinksModule { }

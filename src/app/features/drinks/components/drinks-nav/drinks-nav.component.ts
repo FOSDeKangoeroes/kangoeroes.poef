@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { DeviceDetectionService } from 'src/app/core/device-detection/device-detection.service';
 import { MatSidenav } from '@angular/material/sidenav';
 
@@ -11,10 +11,12 @@ export class DrinksNavComponent implements OnInit, AfterViewInit {
 
   @Input() showBackButton = false;
   @Input() items;
-
+  @Input() title: string;
   @Input() topDrawer: MatSidenav;
 
   @ViewChild('drawer', {static: false}) drawer: MatSidenav;
+
+  @Output() selectedItem = new EventEmitter<number>();
 
   isLockedOpen = true;
 
@@ -31,11 +33,13 @@ export class DrinksNavComponent implements OnInit, AfterViewInit {
 
   }
 
-  onItemClick() {
+  onItemClick(itemId) {
 
     if (!this.isLockedOpen) {
       this.drawer.close();
     }
+
+    this.selectedItem.emit(itemId);
 
   }
 

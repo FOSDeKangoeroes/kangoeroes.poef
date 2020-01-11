@@ -9,15 +9,15 @@ import { I18nPluralPipe } from '@angular/common';
 export class PoefCardComponent implements OnInit {
   @Input() leaderName: string;
   @Input() amountOfDrinks: number;
+  @Input() abbrevation: string;
 
   @Output() plus = new EventEmitter();
   @Output() minus = new EventEmitter();
 
   amountPluralMapping = {
-
-      '=0': 'Geen streepjes',
-      '=1': '1 streepje',
-      'other': '# streepjes'
+    '=0': 'Geen streepjes',
+    '=1': '1 streepje',
+    other: '# streepjes'
   };
 
   constructor() {}

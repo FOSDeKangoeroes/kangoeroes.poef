@@ -1,22 +1,33 @@
 <mat-sidenav-container class="nav-container">
-    <mat-sidenav
+  <mat-sidenav
     [disableClose]="true"
     #drawer
     class="sidenav-list"
     mode="side"
     opened
+  >
+    <mat-toolbar
+      class="mat-elevation-z2 toolbar"
+      [style.marginTop.px]="(deviceService.isHandset$ | async) ? 56 : 0"
     >
-<mat-toolbar class="mat-elevation-z2 toolbar" [style.marginTop.px]="(deviceService.isHandset$ | async) ? 56 : 0">
-<button *ngIf="showBackButton" type="button" mat-icon-button (click)="back()">
-          <mat-icon>arrow_back</mat-icon>
-        </button>
+      <button
+        *ngIf="showBackButton"
+        type="button"
+        mat-icon-button
+        (click)="back()"
+      >
+        <mat-icon>arrow_back</mat-icon>
+      </button>
 
-TITEL</mat-toolbar>
-    <mat-list>
-        <mat-list-item (click)="onItemClick()">ITEM</mat-list-item>
+      {{title}}</mat-toolbar
+    >
+    <mat-list *ngFor="let item of items">
+      <mat-list-item (click)="onItemClick(item.id)">{{
+        item.displayName
+      }}</mat-list-item>
     </mat-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <ng-content></ng-content>
-    </mat-sidenav-content>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
 </mat-sidenav-container>

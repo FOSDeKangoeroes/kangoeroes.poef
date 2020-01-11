@@ -12,6 +12,7 @@ import { MaterialCssVarsModule } from 'angular-material-css-vars';
 import { ThemeSwitcherModule } from './core/components/theme-switcher/theme-switcher.module';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
       lightThemeClass: 'isLightTheme'
     }),
     ThemeSwitcherModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

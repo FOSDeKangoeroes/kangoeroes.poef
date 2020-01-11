@@ -5,9 +5,9 @@
                 <mat-icon>more_vert</mat-icon>
               </button>
 
-              <img mat-card-avatar src="/assets/icons/icon-72x72.png" />
+            <p mat-card-avatar>{{abbrevation}}</p>
             <mat-card-title>{{leaderName}}</mat-card-title>
-            <mat-card-subtitle>{{amountOfDrinks | i18nPlural: amountPluralMapping }}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="amountOfDrinks">{{amountOfDrinks | i18nPlural: amountPluralMapping }}</mat-card-subtitle>
             </mat-card-header>
 
             <mat-card-actions align="end">
