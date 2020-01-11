@@ -5,6 +5,7 @@ import { DrinksRoutingModule } from './drinks-routing.module';
 import { TakListComponent } from './components/tak-list/tak-list.component';
 import { MaterialModule } from 'src/app/core/material/material.module';
 import { PoefCardComponent } from './components/poef-card/poef-card.component';
+import { FlexLayoutModule, GridModule } from '@angular/flex-layout';
 
 
 
@@ -13,7 +14,9 @@ import { PoefCardComponent } from './components/poef-card/poef-card.component';
   imports: [
     CommonModule,
     DrinksRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule,
+    GridModule
   ]
 })
 export class DrinksModule { }

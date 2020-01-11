@@ -39,8 +39,22 @@
           <mat-icon>arrow_back</mat-icon>
         </button>
           Bevers - Cola</mat-toolbar>
-        <div class="card-container">
-          <app-poef-card leaderName="Thomas" amountOfDrinks="0"></app-poef-card>
+        <div 
+        class="card-container" 
+        fxLayout="row wrap" 
+        fxLayout.lt-sm="column" 
+        fxLayoutAlign="flex-start space-evenly"
+        fxLayoutGap="16px grid">
+<ng-container *ngFor="let _ of [1,2,3,4,5,6,7,8,9,10]">
+  <app-poef-card
+  fxFlex="0 1 calc(33.3% - 16px)"
+  fxFlex.lt-lg="0 1 calc(50% - 16px)"
+    fxFlex.lt-sm="100%"
+  >
+
+  </app-poef-card
+  >
+</ng-container>
         </div>
       </mat-sidenav-content>
     </mat-sidenav-container>

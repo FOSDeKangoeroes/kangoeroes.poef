@@ -11,6 +11,7 @@ import { NavigationComponent } from './core/components/navigation/navigation.com
 import { MaterialCssVarsModule } from 'angular-material-css-vars';
 import { ThemeSwitcherModule } from './core/components/theme-switcher/theme-switcher.module';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NotFoundComponent } from './core/components/not-found/not-found.compone
       darkThemeClass: 'isDarkTheme',
       lightThemeClass: 'isLightTheme'
     }),
-    ThemeSwitcherModule
+    ThemeSwitcherModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
