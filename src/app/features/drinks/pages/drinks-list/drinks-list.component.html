@@ -1,32 +1,41 @@
 <mat-sidenav-container class="takNav">
-  <mat-sidenav #takDrawer class="sidenav-list" mode="side" opened>
+  <mat-sidenav 
+  [disableClose]="true"
+  #takDrawer 
+  class="sidenav-list" 
+  mode="side" 
+  opened
+  >
     <mat-toolbar class="mat-elevation-z2">Takken</mat-toolbar>
     <mat-list>
-      <mat-list-item (click)="takDrawer.toggle()">Bevers</mat-list-item>
-      <mat-divider></mat-divider>
+      <mat-list-item (click)="onTakClick()">Bevers</mat-list-item>
       <mat-list-item>Welpen</mat-list-item>
-      <mat-divider></mat-divider
-    ></mat-list>
+
+    </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-sidenav-container class="drinkNav">
-      <mat-sidenav #drankDrawer class="sidenav-list" mode="side" opened>
+    <mat-sidenav-container hasBackdrop="false" class="drinkNav">
+      <mat-sidenav 
+      
+      [disableClose]="true"
+      #drankDrawer 
+      class="sidenav-list" 
+      mode="side"
+       opened>
         
         <mat-toolbar class="mat-elevation-z2">
-          <button type="button" mat-icon-button (click)="takDrawer.toggle()">
+          <button *ngIf="(isHandset$ | async)" type="button" mat-icon-button (click)="takDrawer.toggle()">
           <mat-icon>arrow_back</mat-icon>
         </button>
           Dranken</mat-toolbar>
         <mat-list>
-          <mat-list-item (click)="drankDrawer.toggle()">Cola</mat-list-item>
-          <mat-divider></mat-divider>
+          <mat-list-item (click)="onDrinkClick()">Cola</mat-list-item>
           <mat-list-item>Fanta</mat-list-item>
-          <mat-divider></mat-divider
-        ></mat-list>
+        </mat-list>
       </mat-sidenav>
       <mat-sidenav-content>
         <mat-toolbar class="mat-elevation-z2">
-           <button type="button" mat-icon-button (click)="drankDrawer.toggle()">
+           <button *ngIf="(isHandset$ | async)" type="button" mat-icon-button (click)="drankDrawer.toggle()">
           <mat-icon>arrow_back</mat-icon>
         </button>
           Bevers - Cola</mat-toolbar>

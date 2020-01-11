@@ -2,57 +2,19 @@
 .drinkNav {
   height: 100%;
 
-  /*mat-sidenav {
-    width: 200px;
-  }*/
+  mat-sidenav {
+    min-width: 200px;
+  }
 }
 .card-container {
     padding: 16px;
 }
 
  .sidenav-list {
-    z-index: 1;
-    @media (max-width: 620px) {
+    z-index: 2;
+    @media (max-width: 599px) {
       max-width: 100%;
       width: 100%;
     }
-    & mat-list {
-      border-right: 1px solid darken(grey, 10%);
-    }
-  }
-mat-sidenav {
- 
-  & > mat-toolbar {
-    padding: 15px;
-    height: auto;
-    max-height: 150px;
-  }
-  & mat-divider {
-    margin-top: 4px;
-    margin-bottom: 4px;
-  }
-  &.sidenav-list {
-    md-list-item.md-2-line .md-list-item-text,
-    md-list-item.md-2-line>.md-no-style .md-list-item-text {
-      margin-bottom: 10px;
-    }
-  }
-  &.mat-navigation-drawer {
 
-    md-list-item.md-2-line .md-list-item-text,
-    md-list-item.md-2-line>.md-no-style .md-list-item-text {
-      padding-top: 6px;
-      padding-bottom: 6px;
-    }
-    &, &.mat-drawer-opened {
-      width: 256px;
-      min-width: 256px;
-      max-width: 256px;
-    }
   }
-}
-mat-backdrop + mat-sidenav {
-  &.md-sidenav-list {
-    z-index: 3;
-  }
-}
