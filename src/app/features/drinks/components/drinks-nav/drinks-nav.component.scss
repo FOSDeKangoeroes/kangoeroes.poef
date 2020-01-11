@@ -1,0 +1,15 @@
+mat-sidenav {
+  min-width: 200px;
+}
+
+.sidenav-list {
+  z-index: 2;
+  @media (max-width: 599px) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.nav-container {
+  height: 100%;
+}

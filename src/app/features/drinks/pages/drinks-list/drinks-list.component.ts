@@ -8,10 +8,10 @@ import {
   ElementRef,
   AfterViewInit
 } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+
 import { MatSidenav } from '@angular/material/sidenav';
+import { DeviceDetectionService } from 'src/app/core/device-detection/device-detection.service';
+import { DrinksNavComponent } from '../../components/drinks-nav/drinks-nav.component';
 
 
 @Component({
@@ -19,50 +19,15 @@ import { MatSidenav } from '@angular/material/sidenav';
   templateUrl: './drinks-list.component.html',
   styleUrls: ['./drinks-list.component.scss']
 })
-export class DrinksListComponent implements OnInit, AfterViewInit {
-  isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
+export class DrinksListComponent implements OnInit {
+ 
 
-  isTablet$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Tablet)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
+  @ViewChild('takDrawer', { static: false }) takDrawer: DrinksNavComponent;
 
-  isLockedOpen = true;
-
-  @ViewChild('takDrawer', { static: false }) takDrawer: MatSidenav;
-
-  @ViewChild('drankDrawer', { static: false }) drankDrawer: MatSidenav;
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(public deviceService: DeviceDetectionService) {}
 
   ngOnInit() {}
 
-  ngAfterViewInit() {
-    this.isHandset$.subscribe(res => {
-      console.log(res);
-      this.drankDrawer.open();
-      this.takDrawer.open();
-      this.isLockedOpen = !res;
-    });
+
   }
 
-  onTakClick() {
-    this.closeSideNav(this.takDrawer);
-  }
-
-  onDrinkClick() {
-   this.closeSideNav(this.drankDrawer);
-  }
-
-  private closeSideNav(nav: MatSidenav) {
-    if(!this.isLockedOpen) {
-      nav.close();
-    }
-  }
-}

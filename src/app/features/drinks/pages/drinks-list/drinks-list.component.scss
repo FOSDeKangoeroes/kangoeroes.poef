@@ -1,19 +1,7 @@
-.nav-container {
-  height: 100%;
 
-  mat-sidenav {
-    min-width: 200px;
-  }
-}
 .card-container {
     padding: 16px;
+    max-width: 100%;
 }
 
- .sidenav-list {
-    z-index: 2;
-    @media (max-width: 599px) {
-      max-width: 100%;
-      width: 100%;
-    }
 
-  }

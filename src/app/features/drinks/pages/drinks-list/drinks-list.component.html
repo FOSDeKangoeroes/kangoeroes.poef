@@ -1,67 +1,60 @@
-<mat-sidenav-container class="nav-container">
-  <mat-sidenav 
-  [disableClose]="true"
-  #takDrawer 
-  class="sidenav-list" 
-  mode="side" 
-  opened
-  [class.is-mobile]="(isHandset$| async)"
-  
-  >
-    <mat-toolbar 
-    class="mat-elevation-z2 toolbar"
-    >Takken</mat-toolbar>
-    <mat-list>
-      <mat-list-item (click)="onTakClick()">Bevers</mat-list-item>
-      <mat-list-item>Welpen</mat-list-item>
-
-    </mat-list>
-  </mat-sidenav>
-  <mat-sidenav-content >
-    <mat-sidenav-container class="nav-container">
-      <mat-sidenav 
-      
-      [disableClose]="true"
-      #drankDrawer 
-      class="sidenav-list" 
-      mode="side"
-       opened
-       [class.is-mobile]="(isHandset$| async)" >
-        
-        <mat-toolbar class="mat-elevation-z2 toolbar">
-          <button *ngIf="(isHandset$ | async)" type="button" mat-icon-button (click)="takDrawer.toggle()">
-          <mat-icon>arrow_back</mat-icon>
-        </button>
-          Dranken</mat-toolbar>
-        <mat-list>
-          <mat-list-item (click)="onDrinkClick()">Cola</mat-list-item>
-          <mat-list-item>Fanta</mat-list-item>
-        </mat-list>
-      </mat-sidenav>
-      <mat-sidenav-content class="poef-content" [class.is-mobile]="(isHandset$| async)">
-        <mat-toolbar  class="mat-elevation-z2 toolbar">
-           <button *ngIf="(isHandset$ | async)" type="button" mat-icon-button (click)="drankDrawer.toggle()">
-          <mat-icon>arrow_back</mat-icon>
-        </button>
-          Bevers - Cola</mat-toolbar>
-        <div 
-        class="card-container" 
-        fxLayout="row wrap" 
-        fxLayout.lt-sm="column" 
-        fxLayoutAlign="flex-start space-evenly"
-        fxLayoutGap="16px grid">
-<ng-container *ngFor="let _ of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]">
-  <app-poef-card
-  fxFlex="0 1 calc(33.3% - 16px)"
-  fxFlex.lt-lg="0 1 calc(50% - 16px)"
-    fxFlex.lt-sm="100%"
-  >
-
-  </app-poef-card
-  >
-</ng-container>
-        </div>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<app-drinks-nav #takDrawer>
+  <app-drinks-nav #drankDrawer [topDrawer]="takDrawer.drawer" [showBackButton]="(deviceService.isHandset$ | async)">
+    <mat-toolbar [style.marginTop.px]="(deviceService.isHandset$ | async) ? 56 : 0" class="mat-elevation-z2 toolbar">
+      <button
+        *ngIf="deviceService.isHandset$ | async"
+        type="button"
+        mat-icon-button
+        (click)="drankDrawer.drawer.toggle()"
+      >
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      Bevers - Cola</mat-toolbar
+    >
+    <div
+      class="card-container"
+      fxLayout="row wrap"
+      fxLayout.lt-sm="column"
+      fxLayoutAlign="flex-start space-evenly"
+      fxLayoutGap="16px grid"
+    >
+      <ng-container
+        *ngFor="
+          let _ of [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ]
+        "
+      >
+        <app-poef-card
+          fxFlex="0 1 calc(33.3% - 16px)"
+          fxFlex.lt-lg="0 1 calc(50% - 16px)"
+          fxFlex.lt-sm="100%"
+        >
+        </app-poef-card>
+      </ng-container>
+    </div>
+  </app-drinks-nav>
+</app-drinks-nav>
