@@ -1,5 +1,5 @@
 <app-drinks-nav title="Takken" (selectedItem)="selectTak($event)" #takDrawer [items]="takken">
-  <app-drinks-nav title="Dranken" #drankDrawer [items]="drinks" [topDrawer]="takDrawer.drawer" [showBackButton]="(deviceService.isHandset$ | async)">
+  <app-drinks-nav title="Dranken" (selectedItem)="selectDrink($event)" #drankDrawer [items]="drinks" [topDrawer]="takDrawer.drawer" [showBackButton]="(deviceService.isHandset$ | async)">
     <mat-toolbar [style.marginTop.px]="(deviceService.isHandset$ | async) ? 56 : 0" class="mat-elevation-z2 toolbar">
       <button
         *ngIf="deviceService.isHandset$ | async"
@@ -9,7 +9,8 @@
       >
         <mat-icon>arrow_back</mat-icon>
       </button>
-      Bevers - Cola</mat-toolbar
+      <span *ngIf="(selectedDrink && selectedTak)">{{selectedTak.displayName}} - {{selectedDrink.displayName }}</span>
+    </mat-toolbar
     >
     <div
       class="card-container"

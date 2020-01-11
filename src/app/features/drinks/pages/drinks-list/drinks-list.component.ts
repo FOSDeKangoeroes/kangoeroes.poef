@@ -29,6 +29,9 @@ export class DrinksListComponent implements OnInit {
   takken: Tak[];
   leiding: Leiding[];
   drinks: Drank[];
+
+  selectedTak: Tak;
+  selectedDrink: Drank;
   constructor(
     public deviceService: DeviceDetectionService,
     public dataService: DrinksDataService
@@ -49,6 +52,14 @@ export class DrinksListComponent implements OnInit {
     this.dataService.leiding(takId).subscribe(res => {
       this.leiding = res;
     });
+    this.selectedTak = this.takken.find(item => {
+      return item.id === takId;
+    });
   }
 
+  selectDrink(drinkId: number) {
+    this.selectedDrink = this.drinks.find(item => {
+      return item.id === drinkId;
+    });
+  }
 }
