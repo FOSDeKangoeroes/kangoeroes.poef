@@ -5,4 +5,5 @@ export class Leiding {
     firstName: string;
     takId: number;
     abbreviation: string;
+    email: string;
 }

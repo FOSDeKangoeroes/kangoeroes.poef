@@ -44,6 +44,7 @@ export class DrinksDataService {
             leiding.displayName = `${item.voornaam} ${item.naam}`;
             leiding.abbreviation = item.afkorting;
             leiding.takId = item.takId;
+            leiding.email = item.email;
             return leiding;
           })
         )

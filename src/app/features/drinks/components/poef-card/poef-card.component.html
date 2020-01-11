@@ -5,7 +5,7 @@
                 <mat-icon>more_vert</mat-icon>
               </button>
 
-            <p mat-card-avatar>{{abbrevation}}</p>
+            <app-avatar mat-card-avatar  [value]="abbrevation" [email]="email"></app-avatar>
             <mat-card-title>{{leaderName}}</mat-card-title>
             <mat-card-subtitle *ngIf="amountOfDrinks">{{amountOfDrinks | i18nPlural: amountPluralMapping }}</mat-card-subtitle>
             </mat-card-header>

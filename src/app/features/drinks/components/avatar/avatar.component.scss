@@ -1,0 +1,15 @@
+@import '~angular-material-css-vars/public-util';
+
+.avatar {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+}
+
+.initials {
+    background-color: mat-css-color-primary(500);
+}

@@ -10,6 +10,7 @@ export class PoefCardComponent implements OnInit {
   @Input() leaderName: string;
   @Input() amountOfDrinks: number;
   @Input() abbrevation: string;
+  @Input() email: string;
 
   @Output() plus = new EventEmitter();
   @Output() minus = new EventEmitter();
