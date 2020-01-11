@@ -1,5 +1,5 @@
 <app-drinks-nav title="Takken" (selectedItem)="selectTak($event)" #takDrawer [items]="takken">
-  <app-drinks-nav title="Dranken" #drankDrawer [topDrawer]="takDrawer.drawer" [showBackButton]="(deviceService.isHandset$ | async)">
+  <app-drinks-nav title="Dranken" #drankDrawer [items]="drinks" [topDrawer]="takDrawer.drawer" [showBackButton]="(deviceService.isHandset$ | async)">
     <mat-toolbar [style.marginTop.px]="(deviceService.isHandset$ | async) ? 56 : 0" class="mat-elevation-z2 toolbar">
       <button
         *ngIf="deviceService.isHandset$ | async"

@@ -16,6 +16,7 @@ import { DrinksDataService } from '../../shared/drinks-data.service';
 import { Observable } from 'rxjs';
 import { Tak } from '../../shared/tak.model';
 import { Leiding } from '../../shared/leiding.model';
+import { Drank } from '../../shared/drank.model';
 
 @Component({
   selector: 'app-drinks-list',
@@ -27,6 +28,7 @@ export class DrinksListComponent implements OnInit {
 
   takken: Tak[];
   leiding: Leiding[];
+  drinks: Drank[];
   constructor(
     public deviceService: DeviceDetectionService,
     public dataService: DrinksDataService
@@ -37,6 +39,10 @@ export class DrinksListComponent implements OnInit {
       res.sort((a, b) => a.order - b.order);
       this.takken = res;
     });
+
+    this.dataService.drinks().subscribe(res => {
+      this.drinks = res;
+    });
   }
 
   selectTak(takId: number) {
@@ -44,4 +50,5 @@ export class DrinksListComponent implements OnInit {
       this.leiding = res;
     });
   }
+
 }

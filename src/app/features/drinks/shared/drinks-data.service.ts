@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import { OrdersModule } from '../../orders/orders.module';
 import { Leiding } from './leiding.model';
+import { Drank } from './drank.model';
 
 @Injectable({
   providedIn: 'root'
@@ -49,5 +50,21 @@ export class DrinksDataService {
           })
         )
       );
+  }
+
+  drinks():Observable<Drank[]> {
+    return this.httpClient.get<any[]>(`${environment.appUrl}/drank`).pipe(
+      map(res =>
+        res.map(item => {
+          const drank = new Drank();
+
+          drank.id = item.id;
+          drank.name = item.naam;
+          drank.displayName = item.naam;
+          drank.price = item.prijs;
+          drank.category = item.typeNaam;
+          return drank;
+        }))
+    )
   }
 }
