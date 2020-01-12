@@ -19,6 +19,7 @@ export class DrinksNavComponent implements OnInit, AfterViewInit {
   @Output() selectedItem = new EventEmitter<number>();
 
   isLockedOpen = true;
+  selectedItemId: number;
 
   constructor(public deviceService: DeviceDetectionService) { }
 
@@ -38,6 +39,8 @@ export class DrinksNavComponent implements OnInit, AfterViewInit {
     if (!this.isLockedOpen) {
       this.drawer.close();
     }
+
+    this.selectedItemId = itemId;
 
     this.selectedItem.emit(itemId);
 

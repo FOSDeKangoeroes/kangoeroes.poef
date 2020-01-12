@@ -22,7 +22,7 @@
       {{title}}</mat-toolbar
     >
     <mat-list *ngFor="let item of items">
-      <mat-list-item (click)="onItemClick(item.id)">{{
+      <mat-list-item [class.active]="selectedItemId === item.id" (click)="onItemClick(item.id)">{{
         item.displayName
       }}</mat-list-item>
     </mat-list>
