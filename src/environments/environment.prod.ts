@@ -1,4 +1,4 @@
 export const environment = {
          production: true,
-         appUrl: 'http://staging-kangoeroe-api.azurewebsites.net/api'
+         appUrl: 'https://staging-kangoeroe-api.azurewebsites.net/api'
        };
