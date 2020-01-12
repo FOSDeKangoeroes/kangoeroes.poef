@@ -21,8 +21,9 @@ import { MatRippleModule } from '@angular/material/core';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatSlideToggleModule
-    
+    MatSlideToggleModule,
+    MatCardModule,
+    MatRippleModule
   ],
   exports: [
     LayoutModule,

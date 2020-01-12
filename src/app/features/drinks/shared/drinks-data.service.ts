@@ -52,8 +52,8 @@ export class DrinksDataService {
       );
   }
 
-  drinks():Observable<Drank[]> {
-    return this.httpClient.get<any[]>(`${environment.appUrl}/drank`).pipe(
+  drinks(): Observable<Drank[]> {
+    return this.httpClient.get<any[]>(`${environment.appUrl}/drank?sortBy=type.naam`).pipe(
       map(res =>
         res.map(item => {
           const drank = new Drank();
@@ -65,6 +65,6 @@ export class DrinksDataService {
           drank.category = item.typeNaam;
           return drank;
         }))
-    )
+    );
   }
 }
