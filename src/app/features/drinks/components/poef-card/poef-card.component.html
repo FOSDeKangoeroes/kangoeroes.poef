@@ -2,20 +2,14 @@
   <mat-card class="poef-card"  color="primary" matRipple matRippleCentered="true"
   >
   <div> <mat-card-header
-              ><span class="fill-remaining-space"></span>
-              <button mat-icon-button>
-                <mat-icon>more_vert</mat-icon>
-              </button>
+              >
 
             <app-avatar mat-card-avatar  [value]="abbrevation" [email]="email"></app-avatar>
             <mat-card-title>{{leaderName}}</mat-card-title>
             <mat-card-subtitle *ngIf="amountOfDrinks">{{amountOfDrinks | i18nPlural: amountPluralMapping }}</mat-card-subtitle>
             </mat-card-header>
 
-            <mat-card-actions class="last-child" align="end">
-              <button mat-button>MIN</button>
-              <button mat-button>PLUS</button>
-            </mat-card-actions></div>
+           </div>
            
           </mat-card>
 

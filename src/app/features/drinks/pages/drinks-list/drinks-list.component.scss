@@ -4,4 +4,13 @@
     max-width: 100%;
 }
 
+.content-container {
+  height: 100%;
+
+  .no-selection-container {
+    height: 100%;
+    margin-top: -64px;
+  }
+}
+
 
