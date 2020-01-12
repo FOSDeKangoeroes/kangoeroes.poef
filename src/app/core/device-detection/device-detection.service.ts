@@ -8,7 +8,7 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class DeviceDetectionService {
   isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
+    .observe([Breakpoints.HandsetLandscape, Breakpoints.HandsetPortrait])
     .pipe(
       map(result => result.matches),
       shareReplay()
