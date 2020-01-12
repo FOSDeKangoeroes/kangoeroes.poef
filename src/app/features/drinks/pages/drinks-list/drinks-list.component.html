@@ -23,6 +23,7 @@
         *ngFor="let item of leiding"
       >
         <app-poef-card
+        (clicked)="addToOrder($event)"
         [abbrevation]="item.abbreviation"
         [leaderName]="item.displayName"
         [email]="item.email"

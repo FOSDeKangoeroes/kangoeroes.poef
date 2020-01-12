@@ -17,6 +17,10 @@ import { Observable } from 'rxjs';
 import { Tak } from '../../shared/tak.model';
 import { Leiding } from '../../shared/leiding.model';
 import { Drank } from '../../shared/drank.model';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { OrderComponent } from '../../components/order/order.component';
+import { CartService } from '../../shared/cart.service';
+import { CartItem } from '../../shared/cart-item.model';
 
 @Component({
   selector: 'app-drinks-list',
@@ -26,6 +30,8 @@ import { Drank } from '../../shared/drank.model';
 export class DrinksListComponent implements OnInit {
   @ViewChild('takDrawer', { static: false }) takDrawer: DrinksNavComponent;
 
+  private bottomSheetRef: MatBottomSheetRef;
+
   takken: Tak[];
   leiding: Leiding[];
   drinks: Drank[];
@@ -34,7 +40,9 @@ export class DrinksListComponent implements OnInit {
   selectedDrink: Drank;
   constructor(
     public deviceService: DeviceDetectionService,
-    public dataService: DrinksDataService
+    public dataService: DrinksDataService,
+    private bottomSheet: MatBottomSheet,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -61,5 +69,21 @@ export class DrinksListComponent implements OnInit {
     this.selectedDrink = this.drinks.find(item => {
       return item.id === drinkId;
     });
+  }
+
+  addToOrder(leader) {
+    console.log(leader);
+    if(!this.bottomSheetRef) {
+      this.bottomSheetRef = this.bottomSheet.open(OrderComponent);
+    }
+
+    const cartItem = new CartItem();
+
+    cartItem.leaderName = leader;
+    cartItem.drinkName = this.selectedDrink.displayName;
+    cartItem.quantity = 1;
+
+    this.cartService.addItemToCart(cartItem);
+
   }
 }

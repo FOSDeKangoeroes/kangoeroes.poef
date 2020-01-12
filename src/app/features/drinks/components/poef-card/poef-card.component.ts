@@ -12,8 +12,8 @@ export class PoefCardComponent implements OnInit {
   @Input() abbrevation: string;
   @Input() email: string;
 
-  @Output() plus = new EventEmitter();
-  @Output() minus = new EventEmitter();
+  @Output() clicked = new EventEmitter();
+
 
   amountPluralMapping = {
     '=0': 'Geen streepjes',
@@ -24,4 +24,8 @@ export class PoefCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  onClick() {
+    this.clicked.emit(this.leaderName);
+  }
 }
