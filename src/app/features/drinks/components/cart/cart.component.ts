@@ -3,10 +3,10 @@ import { CartService } from '../../shared/cart.service';
 
 @Component({
   selector: 'app-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.scss']
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss']
 })
-export class OrderComponent implements OnInit {
+export class CartComponent implements OnInit {
 
   constructor(public cartService: CartService) { }
 

@@ -18,7 +18,7 @@ import { Tak } from '../../shared/tak.model';
 import { Leiding } from '../../shared/leiding.model';
 import { Drank } from '../../shared/drank.model';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
-import { OrderComponent } from '../../components/order/order.component';
+import { CartComponent } from '../../components/cart/cart.component';
 import { CartService } from '../../shared/cart.service';
 import { CartItem } from '../../shared/cart-item.model';
 
@@ -74,7 +74,7 @@ export class DrinksListComponent implements OnInit {
   addToOrder(leader) {
 
     if (!this.bottomSheetRef) {
-      this.bottomSheetRef = this.bottomSheet.open(OrderComponent);
+      this.bottomSheetRef = this.bottomSheet.open(CartComponent);
     }
 
     const cartItem = new CartItem();

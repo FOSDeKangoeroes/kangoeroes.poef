@@ -10,7 +10,7 @@ import { DrinksNavComponent } from './components/drinks-nav/drinks-nav.component
 import { HttpClientModule } from '@angular/common/http';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { GravatarDirective } from './components/avatar/gravatar.directive';
-import { OrderComponent } from './components/order/order.component';
+import { CartComponent } from './components/cart/cart.component';
 import { MAT_BOTTOM_SHEET_DEFAULT_OPTIONS } from '@angular/material/bottom-sheet';
 
 
@@ -29,7 +29,7 @@ import { MAT_BOTTOM_SHEET_DEFAULT_OPTIONS } from '@angular/material/bottom-sheet
     DrinksNavComponent,
     AvatarComponent,
     GravatarDirective,
-    OrderComponent],
+    CartComponent],
   imports: [
     CommonModule,
     DrinksRoutingModule,
@@ -38,6 +38,6 @@ import { MAT_BOTTOM_SHEET_DEFAULT_OPTIONS } from '@angular/material/bottom-sheet
     GridModule,
     HttpClientModule
   ],
-  entryComponents: [OrderComponent]
+  entryComponents: [CartComponent]
 })
 export class DrinksModule { }

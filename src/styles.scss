@@ -21,3 +21,7 @@ $mat-css-light-theme-selector: '.isLightTheme';
 .active {
   background: lightgrey;
 }
+
+.mat-bottom-sheet-container {
+  max-height: 20vh !important;
+}
