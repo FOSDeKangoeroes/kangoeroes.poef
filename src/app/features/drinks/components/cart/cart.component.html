@@ -1,3 +1,15 @@
+<div class="buttons">
+  <button class="clear" mat-icon-button>
+    <mat-icon class="red">
+      clear
+    </mat-icon>
+  </button>
+  <button class="done" mat-icon-button>
+    <mat-icon class="green">
+      done
+    </mat-icon>
+  </button>
+</div>
 <ng-container *ngFor="let item of cartService.items | async">
-<p>{{item.leaderName}} - {{item.drinkName}} - {{item.quantity}}</p>
+  <p>{{ item.leaderName }} - {{ item.drinkName }} - {{ item.quantity }}</p>
 </ng-container>

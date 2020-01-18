@@ -1,0 +1,18 @@
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr min-content;
+  grid-template-areas: 'clear done';
+}
+
+.done {
+  color: green;
+  display: grid;
+  justify-self: right;
+}
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
