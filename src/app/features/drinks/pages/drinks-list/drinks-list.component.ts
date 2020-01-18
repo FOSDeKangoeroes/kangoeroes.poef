@@ -72,8 +72,8 @@ export class DrinksListComponent implements OnInit {
   }
 
   addToOrder(leader) {
-    console.log(leader);
-    if(!this.bottomSheetRef) {
+
+    if (!this.bottomSheetRef) {
       this.bottomSheetRef = this.bottomSheet.open(OrderComponent);
     }
 
