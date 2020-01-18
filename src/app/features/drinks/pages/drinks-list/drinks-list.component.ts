@@ -78,8 +78,8 @@ export class DrinksListComponent implements OnInit {
 
     const cartItem = new CartItem();
 
-    cartItem.leaderName = leader;
-    cartItem.drinkName = this.selectedDrink.displayName;
+    cartItem.leader = leader;
+    cartItem.drink = this.selectedDrink;
     cartItem.quantity = 1;
 
     this.cartService.addItemToCart(cartItem);

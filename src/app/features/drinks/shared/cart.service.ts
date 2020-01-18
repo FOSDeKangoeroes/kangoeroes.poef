@@ -22,7 +22,7 @@ export class CartService {
   }
 
   addItemToCart(item: CartItem) {
-    const itemInCart = this.cartItems.find(res => res.drinkName === item.drinkName && res.leaderName === item.leaderName);
+    const itemInCart = this.cartItems.find(res => res.drink.id === item.drink.id && res.leader.id === item.leader.id);
 
     if (itemInCart) {
       itemInCart.quantity++;

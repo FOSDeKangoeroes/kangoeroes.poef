@@ -67,4 +67,8 @@ export class DrinksDataService {
         }))
     );
   }
+
+  submitOrder(order): Observable<any> {
+    return this.httpClient.post<any>(`${environment.appUrl}/order`, order);
+  }
 }

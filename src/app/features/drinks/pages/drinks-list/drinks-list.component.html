@@ -32,7 +32,7 @@
     <div *ngIf="selectedTak && selectedDrink" class="card-container">
       <ng-container *ngFor="let item of leiding">
         <app-poef-card
-          (clicked)="addToOrder($event)"
+          (clicked)="addToOrder(item)"
           [abbrevation]="item.abbreviation"
           [leaderName]="item.displayName"
           [email]="item.email"

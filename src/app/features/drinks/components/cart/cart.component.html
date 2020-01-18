@@ -4,12 +4,12 @@
       clear
     </mat-icon>
   </button>
-  <button class="done" mat-icon-button>
+  <button #submitButton (click)="submit()" class="done" mat-icon-button>
     <mat-icon class="green">
       done
     </mat-icon>
   </button>
 </div>
 <ng-container *ngFor="let item of cartService.items | async">
-  <p>{{ item.leaderName }} - {{ item.drinkName }} - {{ item.quantity }}</p>
+  <p>{{ item.leader.displayName }} - {{ item.drink.displayName }} - {{ item.quantity }}</p>
 </ng-container>
