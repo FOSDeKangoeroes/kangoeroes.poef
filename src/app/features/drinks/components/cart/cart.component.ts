@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CartService } from '../../shared/cart.service';
+import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-order',
@@ -8,9 +9,14 @@ import { CartService } from '../../shared/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  constructor(public cartService: CartService) { }
+  constructor(public cartService: CartService, private bottomSheet: MatBottomSheetRef) { }
 
   ngOnInit() {
+  }
+
+  clear() {
+    this.bottomSheet.dismiss();
+    this.cartService.clearCart();
   }
 
 }

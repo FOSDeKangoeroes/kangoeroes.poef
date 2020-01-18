@@ -36,4 +36,9 @@ export class CartService {
   removeItemFromCart(item: CartItem) {
 
   }
+
+  clearCart() {
+    this.cartItems = [];
+    this.items.next(this.cartItems);
+  }
 }

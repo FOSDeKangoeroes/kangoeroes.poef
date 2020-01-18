@@ -28,8 +28,6 @@ import { CartItem } from '../../shared/cart-item.model';
 export class DrinksListComponent implements OnInit {
   @ViewChild('takDrawer', { static: false }) takDrawer: DrinksNavComponent;
 
-  private bottomSheetRef: MatBottomSheetRef;
-
   takken: Tak[];
   leiding: Leiding[];
   drinks: Drank[];
@@ -52,6 +50,8 @@ export class DrinksListComponent implements OnInit {
     this.dataService.drinks().subscribe(res => {
       this.drinks = res;
     });
+
+
   }
 
   selectTak(takId: number) {
@@ -71,8 +71,9 @@ export class DrinksListComponent implements OnInit {
 
   addToOrder(leader) {
 
-    if (!this.bottomSheetRef) {
-      this.bottomSheetRef = this.bottomSheet.open(CartComponent);
+    if (!this.bottomSheet._openedBottomSheetRef) {
+      this.bottomSheet.open(CartComponent);
+
     }
 
     const cartItem = new CartItem();
@@ -84,4 +85,5 @@ export class DrinksListComponent implements OnInit {
     this.cartService.addItemToCart(cartItem);
 
   }
+
 }
