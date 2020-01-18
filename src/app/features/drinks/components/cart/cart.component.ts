@@ -3,6 +3,7 @@ import { CartService } from '../../shared/cart.service';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { DrinksDataService } from '../../shared/drinks-data.service';
 import { MatButton } from '@angular/material/button';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-order',
@@ -13,7 +14,11 @@ export class CartComponent implements OnInit {
 
   @ViewChild('submitButton', {static: true}) submitButton: MatButton;
 
-  constructor(public cartService: CartService, private bottomSheet: MatBottomSheetRef, private dataService: DrinksDataService) { }
+  constructor(
+    public cartService: CartService,
+    private bottomSheet: MatBottomSheetRef,
+    private dataService: DrinksDataService,
+    private snackbar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -40,9 +45,9 @@ export class CartComponent implements OnInit {
     };
 
     this.dataService.submitOrder(order).subscribe(res => {
-      console.log(res);
       this.cartService.clearCart();
       this.bottomSheet.dismiss();
+      this.snackbar.open('Bestelling succesvol toegevoegd!');
     });
 
   }

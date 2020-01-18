@@ -14,6 +14,7 @@ import { NotFoundComponent } from './core/components/not-found/not-found.compone
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,15 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
     provide: HTTP_INTERCEPTORS,
     useClass: ErrorInterceptor,
     multi: true
-  }],
+  },
+  {
+    provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+    useValue: {
+      duration: '2500',
+      horizontalPosition: 'right'
+    }
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
