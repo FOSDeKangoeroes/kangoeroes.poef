@@ -13,3 +13,10 @@ mat-sidenav {
 .nav-container {
   height: 100%;
 }
+
+.loadingIndicator {
+  display: grid;
+  margin-top: 56px;
+  place-items: center;
+
+}

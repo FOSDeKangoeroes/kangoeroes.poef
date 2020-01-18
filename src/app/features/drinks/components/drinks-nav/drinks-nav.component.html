@@ -21,13 +21,21 @@
 
       {{title}}</mat-toolbar
     >
+    <ng-container *ngIf="items else loadingTemplate">
     <mat-list *ngFor="let item of items">
       <mat-list-item [class.active]="selectedItemId === item.id" (click)="onItemClick(item.id)">{{
         item.displayName
       }}</mat-list-item>
     </mat-list>
+    </ng-container>
   </mat-sidenav>
   <mat-sidenav-content>
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<ng-template #loadingTemplate>
+  <p class="loadingIndicator">
+    Laden...
+  </p>
+  </ng-template>
