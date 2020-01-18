@@ -1,6 +1,22 @@
-<app-drinks-nav  title="Takken" (selectedItem)="selectTak($event)" #takDrawer [items]="takken">
-  <app-drinks-nav class="content-container" title="Dranken" (selectedItem)="selectDrink($event)" #drankDrawer [items]="drinks" [topDrawer]="takDrawer.drawer" [showBackButton]="(deviceService.isHandset$ | async)">
-    <mat-toolbar [style.marginTop.px]="(deviceService.isHandset$ | async) ? 56 : 0" class="mat-elevation-z2 toolbar">
+<app-drinks-nav
+  title="Takken"
+  (selectedItem)="selectTak($event)"
+  #takDrawer
+  [items]="takken"
+>
+  <app-drinks-nav
+    class="content-container"
+    title="Dranken"
+    (selectedItem)="selectDrink($event)"
+    #drankDrawer
+    [items]="drinks"
+    [topDrawer]="takDrawer.drawer"
+    [showBackButton]="deviceService.isHandset$ | async"
+  >
+    <mat-toolbar
+      [style.marginTop.px]="(deviceService.isHandset$ | async) ? 56 : 0"
+      class="mat-elevation-z2 toolbar"
+    >
       <button
         *ngIf="deviceService.isHandset$ | async"
         type="button"
@@ -9,26 +25,26 @@
       >
         <mat-icon>arrow_back</mat-icon>
       </button>
-      <span *ngIf="(selectedDrink && selectedTak)">{{selectedTak.displayName}} - {{selectedDrink.displayName }}</span>
-    </mat-toolbar
-    >
-    <div *ngIf="(selectedTak && selectedDrink)"
-      class="card-container"
-      
-    >
-      <ng-container
-        *ngFor="let item of leiding"
+      <span *ngIf="selectedDrink && selectedTak"
+        >{{ selectedTak.displayName }} - {{ selectedDrink.displayName }}</span
       >
+    </mat-toolbar>
+    <div *ngIf="selectedTak && selectedDrink" class="card-container">
+      <ng-container *ngFor="let item of leiding">
         <app-poef-card
-        (clicked)="addToOrder($event)"
-        [abbrevation]="item.abbreviation"
-        [leaderName]="item.displayName"
-        [email]="item.email"
+          (clicked)="addToOrder($event)"
+          [abbrevation]="item.abbreviation"
+          [leaderName]="item.displayName"
+          [email]="item.email"
         >
         </app-poef-card>
       </ng-container>
     </div>
-    <div *ngIf="!(selectedDrink && selectedTak)" class="no-selection-container" fxLayoutAlign="center center">
+    <div
+      *ngIf="!(selectedDrink && selectedTak)"
+      class="no-selection-container"
+      fxLayoutAlign="center center"
+    >
       <p>Er is geen drank en/of tak geselecteerd.</p>
     </div>
   </app-drinks-nav>
