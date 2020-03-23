@@ -1,4 +1,4 @@
-<button class="container" [class.is-mobile]="isHandset$ | async">
+<div class="container" [class.is-mobile]="isHandset$ | async">
   <mat-toolbar class="toolbar" color="primary">
     <button
       type="button"
@@ -41,7 +41,7 @@
 </div>
 
 <mat-menu x-position="before" #accountMenu="matMenu">
-    <span mat-menu-item>Thema <app-theme-switcher></app-theme-switcher></span>
+    <span mat-menu-item><app-theme-switcher text="Donker"></app-theme-switcher></span>
   <button mat-menu-item (click)="authService.login()" *ngIf="!authService.loggedIn"
     >Inloggen</button
   >

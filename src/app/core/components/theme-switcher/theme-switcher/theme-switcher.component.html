@@ -1,5 +1,5 @@
 <mat-slide-toggle
 [checked]="isDarkTheme"
 (change)="toggleTheme($event)"
-></mat-slide-toggle
+><span *ngIf="text">{{text}}</span></mat-slide-toggle
     >

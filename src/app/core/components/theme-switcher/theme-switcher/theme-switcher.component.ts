@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { MaterialCssVarsService } from 'angular-material-css-vars';
 import { ThemeSwitcherService } from '../theme-switcher.service';
 import { Subscription } from 'rxjs';
@@ -10,6 +10,8 @@ import { Subscription } from 'rxjs';
 })
 export class ThemeSwitcherComponent implements OnInit, OnDestroy {
   isDarkTheme: boolean = false;
+
+  @Input() text: string;
   private switcherSubscription: Subscription;
   constructor(private switcherService: ThemeSwitcherService) {}
 
