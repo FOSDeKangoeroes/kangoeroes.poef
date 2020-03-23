@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  appUrl: 'https://staging-kangoeroe-api.azurewebsites.net/api'
+  appUrl: 'http://localhost:5000/api'
 };
 
 /*

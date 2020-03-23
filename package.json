@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4400",
     "build": "ng build",
     "build-github": "ng build --configuration=github --base-href=\"https://fosdekangoeroes.github.io/kangoeroes.poef/\"",
     "test": "ng test",
@@ -25,6 +25,7 @@
     "@angular/pwa": "^0.803.21",
     "@angular/router": "~8.2.0",
     "@angular/service-worker": "~8.2.0",
+    "@auth0/auth0-spa-js": "^1.6.5",
     "angular-material-css-vars": "^0.1.6",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",

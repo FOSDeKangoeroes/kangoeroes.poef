@@ -15,17 +15,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
+import { AuthInterceptor } from './core/auth/auth.interceptor';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavigationComponent,
-    NotFoundComponent,
-  ],
+  declarations: [AppComponent, NavigationComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production
+    }),
     BrowserAnimationsModule,
     MaterialModule,
     MaterialCssVarsModule.forRoot({
@@ -37,19 +36,25 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: ErrorInterceptor,
-    multi: true
-  },
-  {
-    provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
-    useValue: {
-      duration: '2500',
-      horizontalPosition: 'right'
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    },
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: {
+        duration: '2500',
+        horizontalPosition: 'right'
+      }
     }
-  }
-],
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

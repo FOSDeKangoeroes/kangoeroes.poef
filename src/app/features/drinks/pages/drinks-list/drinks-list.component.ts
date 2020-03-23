@@ -19,6 +19,7 @@ import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-shee
 import { CartComponent } from '../../components/cart/cart.component';
 import { CartService } from '../../shared/cart.service';
 import { CartItem } from '../../shared/cart-item.model';
+import { AuthService } from 'src/app/core/auth/auth.service';
 
 @Component({
   selector: 'app-drinks-list',
@@ -38,10 +39,16 @@ export class DrinksListComponent implements OnInit {
     public deviceService: DeviceDetectionService,
     public dataService: DrinksDataService,
     private bottomSheet: MatBottomSheet,
-    private cartService: CartService
+    private cartService: CartService,
+    public authService: AuthService
   ) {}
 
   ngOnInit() {
+
+    this.authService.userProfile$.subscribe(res => {
+      console.log(res);
+    })
+
     this.dataService.takken().subscribe(res => {
       res.sort((a, b) => a.order - b.order);
       this.takken = res;
