@@ -1,4 +1,4 @@
-<div class="container" [class.is-mobile]="isHandset$ | async">
+<button class="container" [class.is-mobile]="isHandset$ | async">
   <mat-toolbar class="toolbar" color="primary">
     <button
       type="button"
@@ -11,7 +11,10 @@
     <span>kangoeroes-poef</span>
     <span class="fill-remaining-space"></span>
 
-    <app-theme-switcher></app-theme-switcher>
+    <button *ngIf="authService.isAuthenticated$ | async" mat-button [mat-menu-trigger-for]="accountMenu">
+      <img class="avatar" [src]="(authService.userProfile$ | async)?.picture" />
+    </button>
+    
   </mat-toolbar>
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav
@@ -29,8 +32,6 @@
         <a mat-list-item routerLink="/orders" routerLinkActive="active"
           >Mijn bestellingen</a
         >
-        <a mat-list-item (click)="authService.login()" *ngIf="!authService.loggedIn">Log In</a>
-        <a mat-list-item (click)="authService.logout()" *ngIf="authService.loggedIn">Log Out</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content-container">
@@ -38,3 +39,15 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+
+<mat-menu x-position="before" #accountMenu="matMenu">
+    <span mat-menu-item>Thema <app-theme-switcher></app-theme-switcher></span>
+  <button mat-menu-item (click)="authService.login()" *ngIf="!authService.loggedIn"
+    >Inloggen</button
+  >
+  <button mat-menu-item (click)="authService.logout()" *ngIf="authService.loggedIn"
+    >Uitloggen</button
+  >
+
+  <!--<button mat-menu-item>Help</button>-->
+</mat-menu>
