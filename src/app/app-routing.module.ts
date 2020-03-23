@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
+import { AuthGuard } from './core/auth/auth.guard';
 
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'drinks',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuard]
   },
   {
     path: 'drinks',
-    loadChildren: () => import('./features/drinks/drinks.module').then(mod => mod.DrinksModule)
+    loadChildren: () => import('./features/drinks/drinks.module').then(mod => mod.DrinksModule),
+    canActivate: [AuthGuard]
   }
   ,
   {

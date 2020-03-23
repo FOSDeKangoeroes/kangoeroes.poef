@@ -29,8 +29,8 @@
         <a mat-list-item routerLink="/orders" routerLinkActive="active"
           >Mijn bestellingen</a
         >
-        <a mat-list-item href="#" (click)="authService.login()" *ngIf="!authService.loggedIn">Log In</a>
-        <a mat-list-item href="#" (click)="authService.logout()" *ngIf="authService.loggedIn">Log Out</a>
+        <a mat-list-item (click)="authService.login()" *ngIf="!authService.loggedIn">Log In</a>
+        <a mat-list-item (click)="authService.logout()" *ngIf="authService.loggedIn">Log Out</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content-container">
