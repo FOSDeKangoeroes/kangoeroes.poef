@@ -25,6 +25,7 @@
     <mat-list *ngFor="let item of items">
       <mat-list-item [class.active]="selectedItemId === item.id" (click)="onItemClick(item.id)">
         <img matListAvatar *ngIf="item.imageUrl" [src]="item.imageUrl" />
+        <app-avatar size="40px" matListAvatar *ngIf="!item.imageUrl && item.abbreviation" [value]="item.abbreviation"></app-avatar>
         <p matLine>{{
         item.displayName
       }}</p></mat-list-item>

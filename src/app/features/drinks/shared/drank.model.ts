@@ -5,4 +5,5 @@ export class Drank {
     price: number;
     category: string;
     imageUrl: string;
+  abbreviation: any;
 }

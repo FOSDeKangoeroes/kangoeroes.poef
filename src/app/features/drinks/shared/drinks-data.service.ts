@@ -64,6 +64,7 @@ export class DrinksDataService {
           drank.price = item.prijs;
           drank.category = item.typeNaam;
           drank.imageUrl = item.imageUrl;
+          drank.abbreviation = item.afkorting;
           return drank;
         }))
     );
