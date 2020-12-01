@@ -1,2 +1,2 @@
 <p *ngIf="!email" [ngStyle]="styles" class="avatar initials">{{value}}</p>
-<img *ngIf="email" class="avatar" appGravatar [email]="email" >
+<img [ngStyle]="styles" *ngIf="email" class="avatar" appGravatar [email]="email" >
