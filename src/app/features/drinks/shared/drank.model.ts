@@ -4,4 +4,5 @@ export class Drank {
     displayName: string;
     price: number;
     category: string;
+    imageUrl: string;
 }

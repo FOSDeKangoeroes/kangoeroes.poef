@@ -23,9 +23,11 @@
     >
     <ng-container *ngIf="items else loadingTemplate">
     <mat-list *ngFor="let item of items">
-      <mat-list-item [class.active]="selectedItemId === item.id" (click)="onItemClick(item.id)">{{
+      <mat-list-item [class.active]="selectedItemId === item.id" (click)="onItemClick(item.id)">
+        <img matListAvatar *ngIf="item.imageUrl" [src]="item.imageUrl" />
+        <p matLine>{{
         item.displayName
-      }}</mat-list-item>
+      }}</p></mat-list-item>
     </mat-list>
     </ng-container>
   </mat-sidenav>

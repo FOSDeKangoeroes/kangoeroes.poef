@@ -18,7 +18,8 @@ export class CartComponent implements OnInit {
     public cartService: CartService,
     private bottomSheet: MatBottomSheetRef,
     private dataService: DrinksDataService,
-    private snackbar: MatSnackBar) { }
+    private snackbar: MatSnackBar,
+    ) { }
 
   ngOnInit() {
   }
@@ -40,7 +41,6 @@ export class CartComponent implements OnInit {
     });
 
     const order = {
-      orderedById: 1,
       orderlines
     };
 

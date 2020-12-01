@@ -16,7 +16,16 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status !== 401) {
-          this.matSnackbar.open(error.error);
+
+          let errorMessage = error.error;
+
+          if (error.error.DetailedMessage) {
+            errorMessage = error.error.DetailedMessage;
+          }
+
+          console.log(errorMessage);
+
+          this.matSnackbar.open(errorMessage);
         }
         return throwError(error);
       })

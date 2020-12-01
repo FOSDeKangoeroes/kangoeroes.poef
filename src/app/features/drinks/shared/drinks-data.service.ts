@@ -63,6 +63,7 @@ export class DrinksDataService {
           drank.displayName = item.naam;
           drank.price = item.prijs;
           drank.category = item.typeNaam;
+          drank.imageUrl = item.imageUrl;
           return drank;
         }))
     );
