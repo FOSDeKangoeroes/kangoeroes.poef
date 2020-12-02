@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4400",
-    "build": "ng build",
+    "build": "ng build --prod",
     "build-github": "ng build --configuration=github --base-href=\"https://fosdekangoeroes.github.io/kangoeroes.poef/\"",
     "test": "ng test",
     "lint": "ng lint",
