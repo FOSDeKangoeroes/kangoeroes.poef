@@ -1,0 +1,86 @@
+{
+  "configVersion": 1,
+  "timestamp": 1606906177349,
+  "index": "https://fosdekangoeroes.github.io/kangoeroes.poef/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/3-es5.a0c8aa41c8dfdfc92f49.js",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/4-es2015.c614c3b29948ad23390c.js",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/favicon.ico",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/index.html",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/main-es2015.4add2911f0fc8b56cccb.js",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/main-es5.0bdfd51fca63430ea8eb.js",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/manifest.webmanifest",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/polyfills-es2015.5418fc7ad5cfee84cfe3.js",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/polyfills-es5.3f5c8811e67fa4f2b7a3.js",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/runtime-es2015.57183ebd1754139129a3.js",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/runtime-es5.6689368ede56a2355812.js",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/styles.d3e6e5c0e84eab90373a.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-128x128.png",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-144x144.png",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-152x152.png",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-192x192.png",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-384x384.png",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-512x512.png",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-72x72.png",
+        "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-96x96.png"
+      ],
+      "patterns": [
+        "https:\\/\\/fosdekangoeroes\\.github\\.io"
+      ]
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/3-es5.a0c8aa41c8dfdfc92f49.js": "11ba88907b39b23062d1254880d9e39c50681df0",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/4-es2015.c614c3b29948ad23390c.js": "ad862f9a7cda1f0e8231d6622dd929ea53a6c100",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/index.html": "b67ebdd05f95b12346bfb0103c3c0b9823dc7498",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/main-es2015.4add2911f0fc8b56cccb.js": "9e67797f2108a656d33a85933fb70f057b38e9f7",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/main-es5.0bdfd51fca63430ea8eb.js": "c6579a78ab5a08a41e0e4b4b276b4078ac4394b0",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/manifest.webmanifest": "14339cf4eb19073e74b8bfd5d4599e78fa8f8d8b",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/polyfills-es2015.5418fc7ad5cfee84cfe3.js": "ae7538b614884921eb49523efa7e75b0d6b93865",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/polyfills-es5.3f5c8811e67fa4f2b7a3.js": "de74cda43f9250f2c9ca5884800f4dbfc4cee75b",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/runtime-es2015.57183ebd1754139129a3.js": "923c601f44b0cfc10cbf95dc9540e21f46460e32",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/runtime-es5.6689368ede56a2355812.js": "c2ffca84c13e503683e6f7cb7743df74a7691b1d",
+    "https://fosdekangoeroes.github.io/kangoeroes.poef/styles.d3e6e5c0e84eab90373a.css": "7041a7bba12988bbd6d1299d6aecf702bc44feab"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
