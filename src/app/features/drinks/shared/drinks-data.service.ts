@@ -17,7 +17,7 @@ export class DrinksDataService {
 
   public takken(): Observable<Tak[]> {
     return this.httpClient
-      .get<any[]>(`${environment.appUrl}/${this.endpoint}`)
+      .get<any[]>(`${environment.appUrl}/${this.endpoint}?tabIsAllowed=true`)
       .pipe(
         map(res =>
           res.map(item => {
